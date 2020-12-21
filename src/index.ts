@@ -1,6 +1,6 @@
 const operationRegex = /^-?\d+(\s[+-/*]\s-?\d+)+$/;
 
-export const calculator = (operation: string): number => {
+export const calculate = (operation: string): number => {
   if (!operationRegex.test(operation)) throw new Error('Argument must have shape "(num) (operator) (num)"');
 
   const operations = operation.split(' ');
@@ -35,7 +35,7 @@ export const calculator = (operation: string): number => {
   return numbers[0];
 };
 
-export const evalCalculator = (operation: string): number => {
+export const evalCalculate = (operation: string): number => {
   if (!operationRegex.test(operation)) throw new Error('Argument must have shape "(num) (operator) (num)"');
 
   return eval(operation);
