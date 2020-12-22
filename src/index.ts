@@ -25,10 +25,7 @@ export const calculate = (expression: string): number => {
     const rightNumber = numbers.shift() as number;
     const operator = operators.shift();
 
-    let result: number;
-
-    if (operator === '+') result = leftNumber + rightNumber;
-    else result = leftNumber - rightNumber;
+    const result = operator === '+' ? leftNumber + rightNumber : leftNumber - rightNumber;
     numbers.unshift(result);
   }
 
